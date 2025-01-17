@@ -1,0 +1,25 @@
+/* Thumbnail Section CSS */
+
+.thumbnail {
+  align-items: center;
+  background-color: #f0efec;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  height: 200px;
+  place-content: center;
+  text-align: center;
+  transition: background-color 320ms;
+
+  &:hover {
+    background-color: #d7d3c8;
+  }
+
+  .image-loader {
+    display: block;
+  }
+
+  .item-title {
+    margin: 0;
+  }
+}

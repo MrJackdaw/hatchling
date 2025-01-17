@@ -1,0 +1,8 @@
+/* App Header */
+
+.app-header {
+  align-items: center;
+  display: flex;
+  height: 75px;
+  place-content: center;
+}

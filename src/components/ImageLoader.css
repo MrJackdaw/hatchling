@@ -1,0 +1,18 @@
+/* ImageLoader */
+.image-loader.image-loader--rounded {
+  border-radius: 100%;
+  padding: 0.4rem;
+
+  &:hover {
+    animation: scale-up 250ms linear;
+  }
+}
+
+.image-loader,
+.image-loader .caption {
+  display: flex;
+}
+
+.image-loader[class*="border"] {
+  border-style: solid;
+}

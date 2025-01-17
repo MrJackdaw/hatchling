@@ -1,0 +1,26 @@
+/* Home/Landing page */
+
+.thumb-grid {
+  max-width: 856px;
+  text-align: center;
+  margin: 2rem auto 0;
+
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.9rem;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .thumb-grid .thumbnails {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 0.9rem;
+  }
+}

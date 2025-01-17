@@ -1,0 +1,199 @@
+/******************************************
+*  File : Animations.css
+*******************************************/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 0.7rem #a5cfed);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 4px #3c99dc00);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(5%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-10%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classes */
+
+.fade-in {
+  animation: fade-in 250ms ease-out;
+  animation-fill-mode: both;
+}
+
+.fade-out {
+  @extend .fade-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.pulse {
+  animation: pulse 2.1s ease-out;
+}
+
+.scale-in {
+  animation: scale-in 180ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-in-up {
+  will-change: opacity, transform;
+  animation: slide-up 250ms ease-out, fade-in 250ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-in-down {
+  will-change: opacity, transform;
+  animation: slide-down 250ms ease-out, fade-in 250ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-in-right {
+  will-change: opacity, transform;
+  animation-fill-mode: forwards;
+  animation: slide-right 250ms ease-out, fade-in 250ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-in-left {
+  will-change: opacity, transform;
+  animation-fill-mode: forwards;
+  animation: slide-left 250ms ease-out, fade-in 250ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-out-right {
+  @extend .slide-in-right;
+  animation-direction: reverse;
+}
+
+.slide-out-up {
+  animation: slide-up 250ms ease-out, fade-out 250ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-left {
+  animation: slide-left 400ms ease-out;
+}
+
+.slide-right {
+  animation: slide-left 400ms ease-out;
+}
+
+.spinner--after,
+.spinner--before {
+  display: flex;
+}
+
+.spinner--after::after,
+.spinner--before::before {
+  animation: spin 0.8s linear infinite;
+  border-radius: 50%;
+  border: 0.15rem solid;
+  border-top-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 0.9rem;
+  left: 48%;
+  top: 40%;
+  transform-origin: center;
+  width: 0.9rem;
+}
+
+.spinner--after::after {
+  margin-left: 0.3rem;
+}
+
+.spinner--before::before {
+  margin-right: 0.3rem;
+}
